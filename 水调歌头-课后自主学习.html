@@ -1,0 +1,1484 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>水调歌头 · 明月几时有 | 课后自主学习</title>
+<meta name="description" content="苏轼《水调歌头·明月几时有》课后自主学习页：诗词原文、字音字形、重点注释、逐句释义、意象主旨。">
+<meta name="theme-color" content="#f7f2e6">
+<script>document.documentElement.className += ' js';</script>
+<style>
+/* =========================================================
+   水调歌头 · 明月几时有 — 课后自主学习
+   宣纸 / 水墨 / 朱砂
+   ========================================================= */
+
+:root {
+  --paper:      #f7f2e6;
+  --paper-soft: #fbf7ee;
+  --paper-deep: #efe5cf;
+  --ink:        #2a241d;
+  --ink-2:      #4c443a;
+  --ink-3:      #7d7365;
+  --red:        #ad3b2b;
+  --red-soft:   rgba(173, 59, 43, .09);
+  --gold:       #9a7b45;
+  --line:       rgba(42, 36, 29, .12);
+  --line-soft:  rgba(42, 36, 29, .07);
+
+  --kai:  "Kaiti SC", "STKaiti", "KaiTi", "楷体", "Noto Serif SC", serif;
+  --song: "Songti SC", "SimSun", "宋体", "Noto Serif SC", "Source Han Serif SC", serif;
+  --sans: "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", system-ui, sans-serif;
+
+  --shadow: 0 22px 48px -34px rgba(42, 36, 29, .55);
+  --radius: 12px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(1600px 900px at 50% -20%, #fffdf7 0%, transparent 62%),
+    var(--paper);
+  color: var(--ink);
+  font-family: var(--song);
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
+}
+
+/* 纸纹 */
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: .16;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.progress {
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 2px;
+  z-index: 60;
+  background: transparent;
+}
+.progress span {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--red), var(--gold));
+  transition: width .12s linear;
+}
+
+/* ============ 顶栏 ============ */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(247, 242, 230, .86);
+  backdrop-filter: saturate(1.2) blur(10px);
+  border-bottom: 1px solid var(--line-soft);
+}
+.topbar-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 10px 24px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+  flex: none;
+}
+.seal {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 6px;
+  background: linear-gradient(150deg, #b84634, #99301f);
+  color: #fdf6e5;
+  font-family: var(--kai);
+  font-size: 19px;
+  line-height: 1;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .28), 0 6px 14px -8px rgba(153, 48, 31, .9);
+}
+.brand-text { display: flex; flex-direction: column; line-height: 1.25; }
+.brand-text strong {
+  font-family: var(--kai);
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: .12em;
+}
+.brand-text em {
+  font-style: normal;
+  font-size: 11px;
+  letter-spacing: .3em;
+  color: var(--ink-3);
+}
+
+.tabs {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 2px;
+}
+.tabs::-webkit-scrollbar { display: none; }
+
+.tab {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink-3);
+  font-family: var(--song);
+  font-size: 14px;
+  letter-spacing: .06em;
+  cursor: pointer;
+  transition: color .2s, background-color .2s, border-color .2s;
+}
+.tab i {
+  font-style: normal;
+  font-family: var(--kai);
+  font-size: 12px;
+  opacity: .65;
+}
+.tab:hover { color: var(--ink); background: rgba(42, 36, 29, .05); }
+.tab.is-active {
+  color: var(--red);
+  background: var(--red-soft);
+  border-color: rgba(173, 59, 43, .22);
+}
+.tab.is-active i { opacity: 1; }
+.tab:focus-visible,
+.ghost:focus-visible,
+.next:focus-visible,
+.flip:focus-visible,
+.acc-head:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 3px;
+}
+
+/* ============ 首屏 ============ */
+.hero {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  padding: clamp(60px, 7vw, 92px) 24px clamp(84px, 10vw, 120px);
+  text-align: center;
+}
+.moon {
+  position: absolute;
+  z-index: 0;
+  top: clamp(14px, 4.5vw, 58px);
+  right: clamp(16px, 7vw, 130px);
+  width: clamp(130px, 17vw, 210px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle at 36% 30%, #fffdf3 0%, #f6ead0 52%, #e8d3a6 100%);
+  box-shadow:
+    0 0 90px 34px rgba(233, 211, 166, .38),
+    0 0 200px 90px rgba(233, 211, 166, .22);
+  opacity: .95;
+}
+.moon::after {
+  content: "";
+  position: absolute;
+  inset: -12%;
+  border-radius: 50%;
+  border: 1px solid rgba(154, 123, 69, .10);
+}
+
+.ink-mountains {
+  position: absolute;
+  inset: auto 0 0;
+  height: clamp(140px, 16vw, 210px);
+  z-index: 0;
+  pointer-events: none;
+}
+.ink-mountains svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.eyebrow,
+.hero h1,
+.lead,
+.chips { position: relative; z-index: 1; }
+
+.eyebrow {
+  margin: 0 0 18px;
+  font-size: 12px;
+  letter-spacing: .42em;
+  text-indent: .42em;
+  color: var(--ink-3);
+}
+.hero h1 {
+  margin: 0;
+  font-family: var(--kai);
+  font-weight: 500;
+  font-size: clamp(44px, 7.4vw, 86px);
+  letter-spacing: .12em;
+  text-indent: .12em;
+  line-height: 1.15;
+}
+.hero h1 span {
+  display: block;
+  margin-top: 10px;
+  font-size: clamp(18px, 2.4vw, 27px);
+  letter-spacing: .5em;
+  text-indent: .5em;
+  color: var(--ink-2);
+}
+.lead {
+  max-width: 34em;
+  margin: 26px auto 0;
+  color: var(--ink-2);
+  font-size: clamp(14px, 1.35vw, 16.5px);
+  line-height: 2;
+}
+.chips {
+  list-style: none;
+  margin: 26px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+.chips li {
+  padding: 5px 13px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 12px;
+  letter-spacing: .12em;
+  color: var(--ink-3);
+  background: rgba(251, 247, 238, .6);
+}
+
+/* ============ 面板 ============ */
+.stage {
+  position: relative;
+  z-index: 1;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 24px 96px;
+}
+
+.panel { display: none; }
+.panel.is-active {
+  display: block;
+  animation: rise .5s cubic-bezier(.22, .7, .25, 1) both;
+}
+@keyframes rise {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: none; }
+}
+
+.panel-head {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(12px, 2.4vw, 22px);
+  margin: 0 0 clamp(24px, 3.4vw, 34px);
+}
+.panel-head .num {
+  font-family: var(--kai);
+  font-size: clamp(38px, 5vw, 52px);
+  line-height: 1;
+  color: var(--red);
+  opacity: .82;
+  transform: translateY(-2px);
+}
+.panel-head h2 {
+  margin: 0;
+  font-family: var(--kai);
+  font-weight: 500;
+  font-size: clamp(24px, 3.2vw, 31px);
+  letter-spacing: .1em;
+}
+.panel-head p {
+  margin: 6px 0 0;
+  color: var(--ink-3);
+  font-size: 13.5px;
+  letter-spacing: .06em;
+}
+
+/* ============ 壹 · 原文 ============ */
+.poem-card {
+  position: relative;
+  background: linear-gradient(170deg, #fffdf7 0%, var(--paper-soft) 45%, #f7efdd 100%);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: clamp(30px, 5vw, 58px) clamp(22px, 5vw, 58px) clamp(26px, 4vw, 46px);
+}
+.poem-card::before,
+.poem-card::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 1px solid rgba(173, 59, 43, .22);
+}
+.poem-card::before { top: 14px; left: 14px; border-right: 0; border-bottom: 0; }
+.poem-card::after  { bottom: 14px; right: 14px; border-left: 0; border-top: 0; }
+
+.poem-title {
+  margin: 0;
+  text-align: center;
+  font-family: var(--kai);
+  font-weight: 500;
+  font-size: clamp(26px, 3.6vw, 36px);
+  letter-spacing: .3em;
+  text-indent: .3em;
+}
+.poem-author {
+  margin: 10px 0 0;
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: .2em;
+  text-indent: .2em;
+  color: var(--ink-3);
+}
+.poem-preface {
+  max-width: 40em;
+  margin: 22px auto 30px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--line-soft);
+  text-align: center;
+  font-family: var(--kai);
+  font-size: 15.5px;
+  line-height: 1.9;
+  color: var(--ink-2);
+}
+.verse p {
+  margin: 0;
+  padding: 5px 10px;
+  border-radius: 6px;
+  text-align: center;
+  font-family: var(--kai);
+  font-size: clamp(19px, 2.3vw, 26px);
+  line-height: 2.05;
+  letter-spacing: .07em;
+  transition: background-color .25s, color .25s;
+}
+.verse p:hover { background: rgba(173, 59, 43, .055); color: #7f2b1f; }
+
+.note {
+  margin-top: 26px;
+  padding: 22px clamp(20px, 3vw, 30px);
+  background: var(--red-soft);
+  border-left: 3px solid var(--red);
+  border-radius: 0 10px 10px 0;
+}
+.note h3 {
+  margin: 0 0 8px;
+  font-family: var(--kai);
+  font-weight: 600;
+  font-size: 17px;
+  letter-spacing: .12em;
+  color: #8f2f22;
+}
+.note p {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.95;
+  color: var(--ink-2);
+}
+
+/* ============ 通用小控件 ============ */
+.acc-tools {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin: -6px 0 16px;
+}
+.ghost {
+  padding: 7px 15px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--paper-soft);
+  color: var(--ink-2);
+  font-family: var(--song);
+  font-size: 12.5px;
+  letter-spacing: .08em;
+  cursor: pointer;
+  transition: color .2s, border-color .2s, background-color .2s;
+}
+.ghost:hover {
+  color: var(--red);
+  border-color: rgba(173, 59, 43, .35);
+  background: var(--red-soft);
+}
+
+.panel-nav {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 34px;
+}
+.next {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 22px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--paper-soft);
+  color: var(--ink);
+  font-family: var(--song);
+  font-size: 14px;
+  letter-spacing: .06em;
+  cursor: pointer;
+  transition: transform .2s, box-shadow .2s, border-color .2s, color .2s;
+}
+.next span { color: var(--red); transition: transform .25s; }
+.next:hover {
+  transform: translateY(-2px);
+  border-color: rgba(173, 59, 43, .32);
+  color: var(--red);
+  box-shadow: 0 12px 26px -20px rgba(42, 36, 29, .8);
+}
+.next:hover span { transform: translateX(4px); }
+
+/* ============ 贰 · 字音字形 ============ */
+.grid {
+  display: grid;
+  gap: 14px;
+}
+.grid.chars {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.flip {
+  padding: 0;
+  border: 0;
+  background: none;
+  height: 220px;
+  perspective: 1100px;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}
+.flip-inner {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform .62s cubic-bezier(.2, .72, .22, 1);
+}
+.flip.is-flipped .flip-inner { transform: rotateY(180deg); }
+
+.face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.face.front {
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: linear-gradient(165deg, #fffdf7, #f4ead6);
+  box-shadow: 0 16px 34px -30px rgba(42, 36, 29, .9);
+  transition: box-shadow .25s, border-color .25s;
+}
+.flip:hover .face.front {
+  border-color: rgba(173, 59, 43, .28);
+  box-shadow: 0 20px 36px -28px rgba(42, 36, 29, .95);
+}
+.glyph {
+  font-family: var(--kai);
+  font-size: 62px;
+  line-height: 1;
+  color: var(--ink);
+}
+.pinyin {
+  font-size: 14px;
+  letter-spacing: .18em;
+  color: var(--red);
+}
+.cue {
+  margin-top: 8px;
+  font-size: 11.5px;
+  letter-spacing: .16em;
+  color: var(--ink-3);
+}
+.face.back {
+  transform: rotateY(180deg);
+  justify-content: center;
+  padding: 20px 18px;
+  background: linear-gradient(160deg, #3b342b, #241f19);
+  color: #f3ecdb;
+  border-color: rgba(0, 0, 0, .3);
+  text-align: left;
+}
+.tag {
+  font-size: 10.5px;
+  letter-spacing: .3em;
+  color: #e6c48a;
+}
+.text {
+  margin-top: 10px;
+  font-size: 13px;
+  line-height: 1.85;
+  color: rgba(243, 236, 219, .92);
+  text-align: left;
+}
+
+/* ============ 叁 · 注释手风琴 ============ */
+.acc-list { display: flex; flex-direction: column; gap: 10px; }
+.acc {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--paper-soft);
+  overflow: hidden;
+  transition: border-color .25s, box-shadow .25s, background-color .25s;
+}
+.acc:hover { border-color: rgba(173, 59, 43, .24); }
+.acc.is-open {
+  border-color: rgba(173, 59, 43, .3);
+  background: #fffdf8;
+  box-shadow: 0 18px 34px -32px rgba(42, 36, 29, .9);
+}
+.acc-head {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 15px 20px;
+  border: 0;
+  background: none;
+  color: var(--ink);
+  font-family: var(--kai);
+  font-size: 18px;
+  letter-spacing: .06em;
+  text-align: left;
+  cursor: pointer;
+}
+.acc-head .kw { display: inline-flex; align-items: center; }
+.acc-head .kw::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  margin-right: 10px;
+  border-radius: 50%;
+  background: var(--red);
+  opacity: .8;
+  transform: translateY(-1px);
+}
+.chev {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-right: 1.5px solid var(--ink-3);
+  border-bottom: 1.5px solid var(--ink-3);
+  transform: rotate(45deg);
+  transition: transform .3s ease, border-color .3s;
+}
+.acc.is-open .chev { transform: rotate(-135deg); border-color: var(--red); }
+
+.acc-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows .36s cubic-bezier(.3, .7, .3, 1);
+}
+.acc-body > div { overflow: hidden; }
+.acc.is-open .acc-body { grid-template-rows: 1fr; }
+.acc-body p {
+  margin: 0;
+  padding: 0 20px 18px;
+  font-size: 14.5px;
+  line-height: 1.95;
+  color: var(--ink-2);
+}
+
+/* ============ 肆 · 逐句释义 ============ */
+.tr-list {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--paper-soft);
+  box-shadow: var(--shadow);
+}
+.tr-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  transition: background-color .25s;
+}
+.tr-row + .tr-row { border-top: 1px solid var(--line-soft); }
+.tr-row:hover { background: rgba(173, 59, 43, .035); }
+.tr-src {
+  margin: 0;
+  padding: 18px 24px;
+  border-right: 1px dashed var(--line);
+  font-family: var(--kai);
+  font-size: 18.5px;
+  line-height: 1.8;
+}
+.tr-dst {
+  margin: 0;
+  padding: 19px 24px;
+  font-size: 14.5px;
+  line-height: 1.9;
+  color: var(--ink-2);
+}
+mark {
+  color: inherit;
+  background: linear-gradient(transparent 58%, rgba(201, 163, 90, .42) 58%);
+  padding: 0 2px;
+}
+
+/* ============ 伍 · 意象主旨 ============ */
+.theme-block { margin-bottom: 40px; }
+.theme-block h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 18px;
+  font-family: var(--kai);
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: .08em;
+}
+.theme-block h3 .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--red);
+  box-shadow: 0 0 0 4px var(--red-soft);
+}
+.grid.meaning { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.grid.two { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+
+.mini {
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: linear-gradient(170deg, #fffdf8, var(--paper-soft));
+  transition: transform .25s, box-shadow .25s, border-color .25s;
+}
+.mini:hover {
+  transform: translateY(-3px);
+  border-color: rgba(173, 59, 43, .22);
+  box-shadow: 0 22px 36px -34px rgba(42, 36, 29, .95);
+}
+.mini-num {
+  font-family: var(--kai);
+  font-size: 12px;
+  letter-spacing: .22em;
+  color: var(--red);
+}
+.mini h4 {
+  margin: 8px 0 10px;
+  font-family: var(--kai);
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: .08em;
+}
+.mini p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--ink-2);
+}
+.conclusion {
+  margin: 16px 0 0;
+  padding: 16px 20px;
+  border-left: 2px solid var(--gold);
+  background: rgba(154, 123, 69, .06);
+  border-radius: 0 8px 8px 0;
+  font-size: 14.5px;
+  line-height: 1.95;
+  color: var(--ink-2);
+}
+
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.timeline li {
+  position: relative;
+  padding: 0 0 24px 30px;
+}
+.timeline li::before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 10px;
+  bottom: -4px;
+  width: 1px;
+  background: rgba(42, 36, 29, .2);
+}
+.timeline li:last-child { padding-bottom: 0; }
+.timeline li:last-child::before { display: none; }
+.t-dot {
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 11px;
+  height: 11px;
+  border: 2px solid var(--red);
+  border-radius: 50%;
+  background: var(--paper);
+}
+.timeline h4 {
+  margin: 0 0 6px;
+  font-family: var(--kai);
+  font-weight: 600;
+  font-size: 17px;
+  letter-spacing: .06em;
+}
+.timeline p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--ink-2);
+}
+
+/* ============ 页脚 / 回顶 ============ */
+.site-foot {
+  position: relative;
+  z-index: 1;
+  padding: 0 24px 60px;
+  text-align: center;
+  color: var(--ink-3);
+  font-size: 12px;
+  letter-spacing: .12em;
+}
+.site-foot p { margin: 0; }
+
+.to-top {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 45;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: rgba(251, 247, 238, .9);
+  backdrop-filter: blur(6px);
+  color: var(--ink-2);
+  font-size: 17px;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: opacity .25s, transform .25s, color .2s, border-color .2s;
+}
+.to-top.show { opacity: 1; pointer-events: auto; transform: none; }
+.to-top:hover { color: var(--red); border-color: rgba(173, 59, 43, .35); }
+
+/* ============ 进场动画（仅 JS 可用时隐藏，保证无脚本也能读） ============ */
+html.js .reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity .6s ease, transform .6s cubic-bezier(.22, .7, .25, 1);
+}
+html.js .reveal.in { opacity: 1; transform: none; }
+
+/* ============ 响应式 ============ */
+@media (max-width: 860px) {
+  .brand-text em { display: none; }
+  .topbar-inner { padding: 8px 14px; gap: 10px; }
+  .tab { padding: 7px 11px; font-size: 13px; }
+  .tab i { display: none; }
+}
+
+@media (max-width: 720px) {
+  .hero { padding-top: 56px; }
+  .moon { opacity: .55; right: -60px; top: 10px; }
+  .tr-row { grid-template-columns: 1fr; }
+  .tr-src {
+    border-right: 0;
+    border-bottom: 1px dashed var(--line);
+    padding-bottom: 10px;
+  }
+  .tr-src::before,
+  .tr-dst::before {
+    display: block;
+    margin-bottom: 4px;
+    font-family: var(--sans);
+    font-size: 10.5px;
+    letter-spacing: .28em;
+    color: var(--ink-3);
+  }
+  .tr-src::before { content: "原文"; }
+  .tr-dst::before { content: "译文"; }
+  .grid.chars { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .flip { height: 214px; }
+  .glyph { font-size: 52px; }
+  .panel-head .num { font-size: 34px; }
+}
+
+@media (max-width: 420px) {
+  .grid.chars { grid-template-columns: 1fr 1fr; }
+  .face.back { padding: 14px 13px; }
+  .text { font-size: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    transition-duration: .001ms !important;
+  }
+  html.js .reveal { opacity: 1 !important; transform: none !important; }
+}
+
+/* ============ 打印 ============ */
+@media print {
+  .topbar, .progress, .to-top, .panel-nav, .acc-tools, .chips, .site-foot { display: none !important; }
+  body { background: #fff; }
+  .grain, .moon, .ink-mountains { display: none; }
+  .hero { padding: 0 0 24px; }
+  .panel { display: block !important; break-inside: avoid; page-break-before: always; }
+  .panel:first-of-type { page-break-before: auto; }
+  .acc-body { grid-template-rows: 1fr !important; }
+  .flip { height: auto; perspective: none; }
+  .flip-inner { transform: none !important; }
+  .face { position: static; backface-visibility: visible; }
+  .face.back { transform: none; margin-top: 6px; }
+  html.js .reveal { opacity: 1 !important; transform: none !important; }
+}
+
+</style>
+</head>
+<body>
+
+<div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="#poem" data-goto="poem">
+      <span class="seal" aria-hidden="true">轼</span>
+      <span class="brand-text">
+        <strong>水调歌头</strong>
+        <em>课后自主学习</em>
+      </span>
+    </a>
+
+    <div class="tabs" role="tablist" aria-label="学习模块">
+      <button class="tab is-active" id="tab-poem" data-panel="poem" role="tab" aria-selected="true" aria-controls="panel-poem"><i>壹</i>原文</button>
+      <button class="tab" id="tab-chars" data-panel="chars" role="tab" aria-selected="false" aria-controls="panel-chars" tabindex="-1"><i>贰</i>字音字形</button>
+      <button class="tab" id="tab-notes" data-panel="notes" role="tab" aria-selected="false" aria-controls="panel-notes" tabindex="-1"><i>叁</i>重点注释</button>
+      <button class="tab" id="tab-translation" data-panel="translation" role="tab" aria-selected="false" aria-controls="panel-translation" tabindex="-1"><i>肆</i>逐句释义</button>
+      <button class="tab" id="tab-theme" data-panel="theme" role="tab" aria-selected="false" aria-controls="panel-theme" tabindex="-1"><i>伍</i>意象主旨</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="moon" aria-hidden="true"></div>
+  <div class="ink-mountains" aria-hidden="true">
+    <svg viewBox="0 0 1440 220" preserveAspectRatio="none" focusable="false">
+      <defs>
+        <linearGradient id="ridgeA" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#2a241d" stop-opacity=".15"/>
+          <stop offset=".55" stop-color="#2a241d" stop-opacity=".07"/>
+          <stop offset="1" stop-color="#2a241d" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="ridgeB" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#2a241d" stop-opacity=".10"/>
+          <stop offset="1" stop-color="#2a241d" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <path d="M0 168 L96 126 L188 158 L300 94 L392 138 L500 72 L604 132 L716 64 L818 124 L930 82 L1038 142 L1150 102 L1256 150 L1344 116 L1440 142 L1440 220 L0 220 Z" fill="url(#ridgeA)"/>
+      <path d="M0 192 L110 168 L210 188 L320 146 L430 184 L540 136 L650 178 L760 140 L870 180 L980 148 L1090 186 L1200 154 L1310 190 L1400 172 L1440 186 L1440 220 L0 220 Z" fill="url(#ridgeB)"/>
+    </svg>
+  </div>
+
+  <p class="eyebrow reveal">宋 · 苏轼 · 丙辰中秋</p>
+  <h1 class="reveal">水调歌头<span>明月几时有</span></h1>
+  <p class="lead reveal">中秋把酒，对月问天。五步读完全词：读原文、辨字音、解词义、通句意、悟主旨。</p>
+  <ul class="chips reveal" aria-label="学习路径">
+    <li>原文</li>
+    <li>字音字形</li>
+    <li>重点注释</li>
+    <li>逐句释义</li>
+    <li>意象主旨</li>
+  </ul>
+</section>
+
+<main class="stage" id="stage">
+
+  <!-- 壹 · 原文 -->
+  <section class="panel is-active" id="panel-poem" role="tabpanel" aria-labelledby="tab-poem" tabindex="0">
+    <header class="panel-head">
+      <span class="num" aria-hidden="true">壹</span>
+      <div>
+        <h2>诗词原文</h2>
+        <p>先通读全词，建立整体感知</p>
+      </div>
+    </header>
+
+    <article class="poem-card">
+      <h3 class="poem-title">水调歌头</h3>
+      <p class="poem-author">〔宋〕苏轼</p>
+      <p class="poem-preface">丙辰中秋，欢饮达旦，大醉，作此篇，兼怀子由。</p>
+      <div class="verse">
+        <p>明月几时有？把酒问青天。</p>
+        <p>不知天上宫阙，今夕是何年。</p>
+        <p>我欲乘风归去，又恐琼楼玉宇，高处不胜寒。</p>
+        <p>起舞弄清影，何似在人间。</p>
+        <p>转朱阁，低绮户，照无眠。</p>
+        <p>不应有恨，何事长向别时圆？</p>
+        <p>人有悲欢离合，月有阴晴圆缺，此事古难全。</p>
+        <p>但愿人长久，千里共婵娟。</p>
+      </div>
+    </article>
+
+    <aside class="note reveal">
+      <h3>创作背景</h3>
+      <p>宋神宗熙宁九年（1076）中秋，苏轼正在密州（今山东诸城）任知州。此时他与弟弟苏辙已整整七年没有见面。中秋之夜，他饮酒至天明，醉中写下这首词，兼寄思念。词前小序已把时间、情由交代清楚，也定下了全词“欢饮”与“怀人”交织的基调。</p>
+    </aside>
+
+    <nav class="panel-nav" aria-label="模块切换">
+      <button class="next" data-goto="chars">下一节 · 字音字形 <span aria-hidden="true">→</span></button>
+    </nav>
+  </section>
+
+  <!-- 贰 · 字音字形 -->
+  <section class="panel" id="panel-chars" role="tabpanel" aria-labelledby="tab-chars" tabindex="0">
+    <header class="panel-head">
+      <span class="num" aria-hidden="true">贰</span>
+      <div>
+        <h2>难点字音字形</h2>
+        <p>点击卡片翻转，查看记忆要点</p>
+      </div>
+    </header>
+
+    <div class="acc-tools">
+      <button class="ghost" type="button" data-flip="all">全部翻转</button>
+      <button class="ghost" type="button" data-flip="reset">全部复位</button>
+    </div>
+
+    <div class="grid chars">
+      <button class="flip reveal" type="button" aria-pressed="false" aria-label="阙，读 què，点击查看记忆要点">
+        <span class="flip-inner">
+          <span class="face front">
+            <span class="glyph">阙</span>
+            <span class="pinyin">què</span>
+            <span class="cue">点击翻转</span>
+          </span>
+          <span class="face back">
+            <span class="tag">记忆要点</span>
+            <span class="text">门字框表意，本指宫门两侧的望楼，“宫阙”即宫殿。别与量词“阕”（一阕词）混用。</span>
+          </span>
+        </span>
+      </button>
+
+      <button class="flip reveal" type="button" aria-pressed="false" aria-label="琼，读 qióng，点击查看记忆要点">
+        <span class="flip-inner">
+          <span class="face front">
+            <span class="glyph">琼</span>
+            <span class="pinyin">qióng</span>
+            <span class="cue">点击翻转</span>
+          </span>
+          <span class="face back">
+            <span class="tag">记忆要点</span>
+            <span class="text">斜玉旁（写作“王”），本义是美玉。“琼楼玉宇”形容月宫楼阁如美玉砌成，华美晶莹。</span>
+          </span>
+        </span>
+      </button>
+
+      <button class="flip reveal" type="button" aria-pressed="false" aria-label="绮，读 qǐ，点击查看记忆要点">
+        <span class="flip-inner">
+          <span class="face front">
+            <span class="glyph">绮</span>
+            <span class="pinyin">qǐ</span>
+            <span class="cue">点击翻转</span>
+          </span>
+          <span class="face back">
+            <span class="tag">记忆要点</span>
+            <span class="text">绞丝旁，本义是有花纹的丝织品。“绮户”指雕饰华美的窗户。读 qǐ，不要误读成 yǐ 或 qí。</span>
+          </span>
+        </span>
+      </button>
+
+      <button class="flip reveal" type="button" aria-pressed="false" aria-label="胜，此处读 shēng，点击查看记忆要点">
+        <span class="flip-inner">
+          <span class="face front">
+            <span class="glyph">胜</span>
+            <span class="pinyin">shēng</span>
+            <span class="cue">点击翻转</span>
+          </span>
+          <span class="face back">
+            <span class="tag">记忆要点</span>
+            <span class="text">这里读 shēng，意为“承受、禁得住”，“不胜寒”就是受不住那份寒冷。读 shèng 时多表示胜利、优美。</span>
+          </span>
+        </span>
+      </button>
+
+      <button class="flip reveal" type="button" aria-pressed="false" aria-label="婵，读 chán，点击查看记忆要点">
+        <span class="flip-inner">
+          <span class="face front">
+            <span class="glyph">婵</span>
+            <span class="pinyin">chán</span>
+            <span class="cue">点击翻转</span>
+          </span>
+          <span class="face back">
+            <span class="tag">记忆要点</span>
+            <span class="text">女字旁，常与“娟”连用。“婵娟”本形容姿态美好，词中借指明月。</span>
+          </span>
+        </span>
+      </button>
+
+      <button class="flip reveal" type="button" aria-pressed="false" aria-label="娟，读 juān，点击查看记忆要点">
+        <span class="flip-inner">
+          <span class="face front">
+            <span class="glyph">娟</span>
+            <span class="pinyin">juān</span>
+            <span class="cue">点击翻转</span>
+          </span>
+          <span class="face back">
+            <span class="tag">记忆要点</span>
+            <span class="text">女字旁，本义秀丽美好。“千里共婵娟”即相隔千里、共赏一轮明月。</span>
+          </span>
+        </span>
+      </button>
+    </div>
+
+    <nav class="panel-nav" aria-label="模块切换">
+      <button class="next" data-goto="notes">下一节 · 重点注释 <span aria-hidden="true">→</span></button>
+    </nav>
+  </section>
+
+  <!-- 叁 · 重点注释 -->
+  <section class="panel" id="panel-notes" role="tabpanel" aria-labelledby="tab-notes" tabindex="0">
+    <header class="panel-head">
+      <span class="num" aria-hidden="true">叁</span>
+      <div>
+        <h2>重点注释</h2>
+        <p>点开词条，逐条扫清理解障碍</p>
+      </div>
+    </header>
+
+    <div class="acc-tools">
+      <button class="ghost" type="button" data-acc="open">全部展开</button>
+      <button class="ghost" type="button" data-acc="close">全部收起</button>
+    </div>
+
+    <div class="acc-list">
+      <div class="acc">
+        <button class="acc-head" type="button" aria-expanded="false"><span class="kw">把酒</span><span class="chev" aria-hidden="true"></span></button>
+        <div class="acc-body"><div><p>端起酒杯。“把”在这里作动词，是持、端的意思。开篇举杯问天，气象阔大。</p></div></div>
+      </div>
+
+      <div class="acc">
+        <button class="acc-head" type="button" aria-expanded="false"><span class="kw">天上宫阙</span><span class="chev" aria-hidden="true"></span></button>
+        <div class="acc-body"><div><p>传说中月宫里的宫殿。“阙”原指宫门两侧的楼观，这里借指月中仙宫。</p></div></div>
+      </div>
+
+      <div class="acc">
+        <button class="acc-head" type="button" aria-expanded="false"><span class="kw">归去</span><span class="chev" aria-hidden="true"></span></button>
+        <div class="acc-body"><div><p>回到天上去。苏轼自比谪仙，本是天上人，所以用“归”而不用“去”，一字之中藏着身世之感。</p></div></div>
+      </div>
+
+      <div class="acc">
+        <button class="acc-head" type="button" aria-expanded="false"><span class="kw">琼楼玉宇</span><span class="chev" aria-hidden="true"></span></button>
+        <div class="acc-body"><div><p>美玉砌成的楼阁，形容月宫中殿宇的华美。“琼”是美玉，“宇”指屋檐、房屋。</p></div></div>
+      </div>
+
+      <div class="acc">
+        <button class="acc-head" type="button" aria-expanded="false"><span class="kw">不胜寒</span><span class="chev" aria-hidden="true"></span></button>
+        <div class="acc-body"><div><p>经受不住寒冷。“胜”读 shēng。表面写月宫高处的清冷，内里也暗含对朝堂风波的顾虑。</p></div></div>
+      </div>
+
+      <div class="acc">
+        <button class="acc-head" type="button" aria-expanded="false"><span class="kw">何似</span><span class="chev" aria-hidden="true"></span></button>
+        <div class="acc-body"><div><p>哪里比得上。“何似在人间”是说月宫虽好，终究不如人间，可见词人最终的选择与眷恋。</p></div></div>
+      </div>
+
+      <div class="acc">
+        <button class="acc-head" type="button" aria-expanded="false"><span class="kw">清影</span><span class="chev" aria-hidden="true"></span></button>
+        <div class="acc-body"><div><p>月光下清冷的身影。起舞时只有影子相随，笔致飘逸，也透出几分孤独。</p></div></div>
+      </div>
+
+      <div class="acc">
+        <button class="acc-head" type="button" aria-expanded="false"><span class="kw">何事长向别时圆</span><span class="chev" aria-hidden="true"></span></button>
+        <div class="acc-body"><div><p>为什么总在人们离别的时候才圆呢？“何事”即为何，“长”即总是。看似嗔怪月亮，实是借月写离愁。</p></div></div>
+      </div>
+
+      <div class="acc">
+        <button class="acc-head" type="button" aria-expanded="false"><span class="kw">婵娟</span><span class="chev" aria-hidden="true"></span></button>
+        <div class="acc-body"><div><p>本指姿态美好，这里代指明月。“千里共婵娟”化用“隔千里兮共明月”的意境，成为千古名句。</p></div></div>
+      </div>
+    </div>
+
+    <nav class="panel-nav" aria-label="模块切换">
+      <button class="next" data-goto="translation">下一节 · 逐句释义 <span aria-hidden="true">→</span></button>
+    </nav>
+  </section>
+
+  <!-- 肆 · 逐句释义 -->
+  <section class="panel" id="panel-translation" role="tabpanel" aria-labelledby="tab-translation" tabindex="0">
+    <header class="panel-head">
+      <span class="num" aria-hidden="true">肆</span>
+      <div>
+        <h2>逐句释义</h2>
+        <p>原文与白话逐句对照，重点词义已标亮</p>
+      </div>
+    </header>
+
+    <div class="tr-list">
+      <div class="tr-row reveal">
+        <p class="tr-src">明月几时有？<mark>把酒</mark>问青天。</p>
+        <p class="tr-dst">明月是从什么时候开始有的？我端起酒杯，向青天发问。</p>
+      </div>
+      <div class="tr-row reveal">
+        <p class="tr-src">不知天上<mark>宫阙</mark>，今夕是何年。</p>
+        <p class="tr-dst">不知道天上的宫殿里，今晚已是哪一年。</p>
+      </div>
+      <div class="tr-row reveal">
+        <p class="tr-src">我欲<mark>乘风归去</mark>，又恐<mark>琼楼玉宇</mark>，高处<mark>不胜寒</mark>。</p>
+        <p class="tr-dst">我想乘风回到天上去，又怕那美玉般的楼宇太高，受不住那份清寒。</p>
+      </div>
+      <div class="tr-row reveal">
+        <p class="tr-src">起舞弄清影，<mark>何似</mark>在人间。</p>
+        <p class="tr-dst">不如在月下起舞，与清影相伴——这哪里比得上人间呢。</p>
+      </div>
+      <div class="tr-row reveal">
+        <p class="tr-src">转朱阁，低绮户，照无眠。</p>
+        <p class="tr-dst">月光转过朱红的楼阁，低低地照进雕花的窗，照着无法入睡的人。</p>
+      </div>
+      <div class="tr-row reveal">
+        <p class="tr-src">不应有恨，何事长向别时圆？</p>
+        <p class="tr-dst">月亮该没有什么怨恨吧，可为什么总在人们离别时才圆？</p>
+      </div>
+      <div class="tr-row reveal">
+        <p class="tr-src">人有悲欢离合，月有阴晴圆缺，此事古难全。</p>
+        <p class="tr-dst">人有悲欢离合，月有阴晴圆缺，这样的事自古就难两全。</p>
+      </div>
+      <div class="tr-row reveal">
+        <p class="tr-src">但愿人长久，千里共婵娟。</p>
+        <p class="tr-dst">只愿亲人平安长久，纵相隔千里，也能共赏这一轮明月。</p>
+      </div>
+    </div>
+
+    <nav class="panel-nav" aria-label="模块切换">
+      <button class="next" data-goto="theme">下一节 · 意象主旨 <span aria-hidden="true">→</span></button>
+    </nav>
+  </section>
+
+  <!-- 伍 · 意象主旨 -->
+  <section class="panel" id="panel-theme" role="tabpanel" aria-labelledby="tab-theme" tabindex="0">
+    <header class="panel-head">
+      <span class="num" aria-hidden="true">伍</span>
+      <div>
+        <h2>意象主旨</h2>
+        <p>从意象、手法到情感脉络，读懂这首词的层次</p>
+      </div>
+    </header>
+
+    <div class="theme-block">
+      <h3><span class="dot" aria-hidden="true"></span>一、月亮的三重意涵</h3>
+      <div class="grid meaning">
+        <article class="mini reveal">
+          <span class="mini-num">01</span>
+          <h4>起兴之物</h4>
+          <p>把酒问月，由一轮中秋圆月生出对宇宙与人生的追问，开篇便有浩荡之气。</p>
+        </article>
+        <article class="mini reveal">
+          <span class="mini-num">02</span>
+          <h4>思念之媒</h4>
+          <p>月圆而人缺，月亮成了离愁的寄托。嗔怪月亮“偏在别时圆”，其实是思念难遣。</p>
+        </article>
+        <article class="mini reveal">
+          <span class="mini-num">03</span>
+          <h4>祝福之象</h4>
+          <p>“千里共婵娟”把月亮升华为跨越距离的祝愿：同望一月，便如相聚。</p>
+        </article>
+      </div>
+    </div>
+
+    <div class="theme-block">
+      <h3><span class="dot" aria-hidden="true"></span>二、虚实相生的写法</h3>
+      <div class="grid two">
+        <article class="mini reveal">
+          <h4>上阕 · 虚写天上</h4>
+          <p>乘风归去、琼楼玉宇、起舞清影，都是想象中的月宫仙境，写得空灵飘举。</p>
+        </article>
+        <article class="mini reveal">
+          <h4>下阕 · 实写人间</h4>
+          <p>朱阁、绮户、无眠之人，是眼前真切的月夜实景，写得细腻可感。</p>
+        </article>
+      </div>
+      <p class="conclusion reveal">一虚一实，天上与人间的对照，其实是出世与入世的权衡。词人几番犹豫，最终落在“何似在人间”——不舍人间烟火，正是全词的温厚处。</p>
+    </div>
+
+    <div class="theme-block">
+      <h3><span class="dot" aria-hidden="true"></span>三、情感脉络</h3>
+      <ol class="timeline">
+        <li class="reveal">
+          <span class="t-dot" aria-hidden="true"></span>
+          <div>
+            <h4>把酒问月 · 豪迈起兴</h4>
+            <p>举杯向天发问，气魄开阔，是对宇宙人生的好奇与追问。</p>
+          </div>
+        </li>
+        <li class="reveal">
+          <span class="t-dot" aria-hidden="true"></span>
+          <div>
+            <h4>欲归又恐 · 进退踌躇</h4>
+            <p>想乘风归去，又怕高处清寒。向往与顾虑并存，情绪由豪放转向低回。</p>
+          </div>
+        </li>
+        <li class="reveal">
+          <span class="t-dot" aria-hidden="true"></span>
+          <div>
+            <h4>月圆人缺 · 离愁暗涌</h4>
+            <p>由天上回到人间，月圆人不圆，嗔月之语里满是思念弟弟的怅惘。</p>
+          </div>
+        </li>
+        <li class="reveal">
+          <span class="t-dot" aria-hidden="true"></span>
+          <div>
+            <h4>以理遣情 · 豁达祝愿</h4>
+            <p>悟出悲欢离合如月之阴晴圆缺，自古难全，于是化离愁为“千里共婵娟”的祝福。</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+
+    <nav class="panel-nav" aria-label="模块切换">
+      <button class="next" data-goto="poem">回到开头 · 诗词原文 <span aria-hidden="true">↺</span></button>
+    </nav>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <p>本页为教学演示 · 依苏轼《水调歌头·明月几时有》整理</p>
+</footer>
+
+<button class="to-top" id="toTop" type="button" aria-label="回到顶部">↑</button>
+
+<script>
+/* =========================================================
+   水调歌头 · 课后自主学习 — 交互
+   1. 模块切换（tab + 键盘 + 深链接）
+   2. 进场动画
+   3. 字音卡翻转
+   4. 注释手风琴
+   5. 阅读进度 / 回到顶部
+   ========================================================= */
+
+(function () {
+  'use strict';
+
+  var $ = function (sel, root) { return (root || document).querySelector(sel); };
+  var $$ = function (sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); };
+
+  /* ---------- 1. 模块切换 ---------- */
+  var tabs = $$('.tab');
+  var panels = $$('.panel');
+  var stage = $('#stage');
+
+  function activate(id, options) {
+    options = options || {};
+    var panel = $('#panel-' + id);
+    if (!panel) { return false; }
+
+    tabs.forEach(function (tab) {
+      var on = tab.getAttribute('data-panel') === id;
+      tab.classList.toggle('is-active', on);
+      tab.setAttribute('aria-selected', on ? 'true' : 'false');
+      tab.tabIndex = on ? 0 : -1;
+    });
+
+    panels.forEach(function (item) {
+      item.classList.toggle('is-active', item === panel);
+    });
+
+    // 面板内元素补一次进场
+    window.setTimeout(function () {
+      $$('.reveal', panel).forEach(function (el) { el.classList.add('in'); });
+    }, 40);
+
+    if (options.updateHash !== false) {
+      try { history.replaceState(null, '', '#' + id); } catch (e) { /* file:// 下也可用 */ }
+    }
+
+    if (options.scroll) {
+      var top = stage.getBoundingClientRect().top + window.pageYOffset - 72;
+      window.scrollTo({ top: Math.max(top, 0), behavior: 'smooth' });
+    }
+    return true;
+  }
+
+  function activateFromControl(id) {
+    // 切换模块时把内容顶端带到视口，避免停在装饰性首屏
+    activate(id, { scroll: true });
+  }
+
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      activateFromControl(tab.getAttribute('data-panel'));
+    });
+  });
+
+  // tab 键盘操作
+  var tabList = $('.tabs');
+  tabList.addEventListener('keydown', function (event) {
+    var keys = ['ArrowRight', 'ArrowLeft', 'Home', 'End'];
+    if (keys.indexOf(event.key) === -1) { return; }
+    event.preventDefault();
+
+    var current = tabs.indexOf(document.activeElement);
+    if (current === -1) { current = 0; }
+    var next = current;
+    if (event.key === 'ArrowRight') { next = (current + 1) % tabs.length; }
+    if (event.key === 'ArrowLeft') { next = (current - 1 + tabs.length) % tabs.length; }
+    if (event.key === 'Home') { next = 0; }
+    if (event.key === 'End') { next = tabs.length - 1; }
+
+    tabs[next].focus();
+    activate(tabs[next].getAttribute('data-panel'));
+  });
+
+  // 底部“下一节”与品牌链接
+  $$('[data-goto]').forEach(function (el) {
+    el.addEventListener('click', function (event) {
+      event.preventDefault();
+      activate(el.getAttribute('data-goto'), { scroll: true });
+    });
+  });
+
+  // 深链接：/index.html#chars
+  function idFromHash() {
+    var id = (location.hash || '').replace('#', '');
+    return $('#panel-' + id) ? id : null;
+  }
+  var initial = idFromHash();
+  activate(initial || 'poem', { updateHash: false, scroll: false });
+
+  window.addEventListener('hashchange', function () {
+    var id = idFromHash();
+    if (id) { activate(id, { updateHash: false }); }
+  });
+
+  /* ---------- 2. 进场动画 ---------- */
+  var reveals = $$('.reveal');
+
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+
+    reveals.forEach(function (el) { io.observe(el); });
+  } else {
+    reveals.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  /* ---------- 3. 字音卡翻转 ---------- */
+  var flips = $$('.flip');
+
+  flips.forEach(function (card) {
+    card.addEventListener('click', function () {
+      var flipped = card.classList.toggle('is-flipped');
+      card.setAttribute('aria-pressed', flipped ? 'true' : 'false');
+    });
+  });
+
+  $$('[data-flip]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var mode = btn.getAttribute('data-flip');
+      flips.forEach(function (card) {
+        var flipped = mode === 'all' || (mode === 'toggle' && !card.classList.contains('is-flipped'));
+        card.classList.toggle('is-flipped', flipped);
+        card.setAttribute('aria-pressed', flipped ? 'true' : 'false');
+      });
+    });
+  });
+
+  /* ---------- 4. 注释手风琴 ---------- */
+  $$('.acc-head').forEach(function (head) {
+    head.addEventListener('click', function () {
+      var item = head.parentNode;
+      var open = item.classList.toggle('is-open');
+      head.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+
+  $$('[data-acc]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var open = btn.getAttribute('data-acc') === 'open';
+      $$('.acc').forEach(function (item) {
+        item.classList.toggle('is-open', open);
+        var head = $('.acc-head', item);
+        if (head) { head.setAttribute('aria-expanded', open ? 'true' : 'false'); }
+      });
+    });
+  });
+
+  /* ---------- 5. 阅读进度 / 回到顶部 ---------- */
+  var bar = $('#progressBar');
+  var toTop = $('#toTop');
+  var ticking = false;
+
+  function onScroll() {
+    if (ticking) { return; }
+    ticking = true;
+    window.requestAnimationFrame(function () {
+      var doc = document.documentElement;
+      var max = doc.scrollHeight - window.innerHeight;
+      var progress = max > 0 ? (window.pageYOffset / max) * 100 : 0;
+      if (bar) { bar.style.width = Math.min(progress, 100) + '%'; }
+      if (toTop) { toTop.classList.toggle('show', window.pageYOffset > 560); }
+      ticking = false;
+    });
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  onScroll();
+
+  if (toTop) {
+    toTop.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+})();
+
+</script>
+</body>
+</html>
